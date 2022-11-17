@@ -9,7 +9,7 @@ import Connected from "../components/Connected"
 
 
 const Home: NextPage = () => {
-  const { connected } = useWallet()
+
   return (
     <div className={styles.container}>
       <Head>
@@ -21,18 +21,16 @@ const Home: NextPage = () => {
       <Box
         w="full"
         h="calc(100vh)"
-        bgImage={connected ? "" : "url(/home-background.svg)"}
+        bgImage={"url(/home-background.svg)"}
         backgroundPosition="center"
       >
         <Stack w="full" h="calc(100vh)" justify="center">
-          {NavBar}
-          <NavBar />
+          { /* NavBar */ }
 
           <Spacer />
           <Center>
             { /* If connected, the second view, otherwise the first */ }
-            {!connected && <Disconnected />}
-            </Center>
+                </Center>
           <Spacer />
 
           <Center>
