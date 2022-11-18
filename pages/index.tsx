@@ -9,7 +9,7 @@ import Connected from "../components/Connected"
 
 
 const Home: NextPage = () => {
-
+  const { connected } = useWallet()
   return (
     <div className={styles.container}>
       <Head>
@@ -26,11 +26,10 @@ const Home: NextPage = () => {
       >
         <Stack w="full" h="calc(100vh)" justify="center">
           { /* NavBar */ }
+          <NavBar />
 
           <Spacer />
-          <Center>
-            { /* If connected, the second view, otherwise the first */ }
-                </Center>
+          <Center>{connected ? <Connected /> : <Disconnected />}</Center>
           <Spacer />
 
           <Center>
